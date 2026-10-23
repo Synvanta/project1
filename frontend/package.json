@@ -1,0 +1,22 @@
+{
+  "name": "scroll-sequence-hero",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:admin:login": "vite build --config vite.admin.config.js",
+    "build:admin:dashboard": "vite build --config vite.admin-dashboard.config.js",
+    "build:admin:users": "vite build --config vite.admin-users.config.js",
+    "build:admin": "npm run build:admin:login && npm run build:admin:dashboard && npm run build:admin:users",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
