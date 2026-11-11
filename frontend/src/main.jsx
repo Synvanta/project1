@@ -2,9 +2,24 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "../styles.css";
+import "../pages.css";
 
-createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+function mount() {
+  const container = document.getElementById("root");
+
+  if (!container) {
+    return false;
+  }
+
+  createRoot(container).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+
+  return true;
+}
+
+if (!mount()) {
+  document.addEventListener("DOMContentLoaded", mount, { once: true });
+}
